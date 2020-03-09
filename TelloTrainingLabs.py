@@ -30,7 +30,7 @@ def recv():
             break
 
 
-def sendmsg(msg, sleep = 4):
+def sendmsg(msg, sleep = 6):
     print("Sending: " + msg)
     msg = msg.encode(encoding="utf-8")
     sock.sendto(msg, tello_address)
@@ -72,7 +72,9 @@ try:
         sendmsg('takeoff', 8)
 
         #square() calling function square
-        triangle()
+        #triangle()
+        for i in range(5):
+            sendmsg('flip f')
 
         sendmsg('land')
 
