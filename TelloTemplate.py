@@ -58,6 +58,11 @@ try:
 
         sendmsg('command', 0)
         sendmsg('takeoff')
+        sendmsg('mon', 4)
+        sendmsg('mdirection 2', 4)
+        sendmsg('up 90')
+        sendmsg('go 100 0 0 50 m6')
+        sendmsg('flip f')
 
         # Review the (SDK) Software Development Kit resource for Drone Commands
         # Delete these comments before writing your program
