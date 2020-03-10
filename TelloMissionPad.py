@@ -42,11 +42,20 @@ recvThread.start()
 
 
 # CREATE FUNCTIONS HERE....
+def up190():
+    sendmsg('up 100')
+    sendmsg('up 90')
 
+def missionPadInitiate():
+    sendmsg('mon', 4)
+    sendmsg('mdirection 2', 4)
 
-print("\nFirst & Last Names")
-print("Program Name: ")
-print("Date: ")
+def flip(direction = 'f'):
+    sendmsg('flip ' + direction)
+
+print("\nLuke Marchand")
+print("Program Name: Double Drone Crossover: Up")
+print("Date: 3/10/20")
 print("\n****CHECK YOUR TELLO WIFI ADDRESS****")
 print("\n****CHECK SURROUNDING AREA BEFORE FLIGHT****")
 ready = input('\nAre you ready to take flight: ')
@@ -58,6 +67,10 @@ try:
 
         sendmsg('command', 0)
         sendmsg('takeoff')
+        missionPadInitiate()
+        up190()
+        sendmsg('go 100 0 0 50 m6')
+        flip()
 
         # Review the (SDK) Software Development Kit resource for Drone Commands
         # Delete these comments before writing your program
